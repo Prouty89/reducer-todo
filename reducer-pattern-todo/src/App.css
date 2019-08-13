@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 2%;
+  min-height: 300px;
+  background: whitesmoke;
+  margin-top: 5%;
+};
+
+ h1{
+  background-color: black;
+}
+
+
