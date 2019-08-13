@@ -19,19 +19,21 @@ const Todo = () => {
     };
   
      return (
-      <div className='todo-app'>
-        <h1>Reduce(you)r Todos!</h1>
-  
+        <div className='todo-container'>
+         <h1>Reduce(you)r Todos!</h1>
+         <legend>Click"Status" to Toggle Your Todo
   
          {state.todos.map(todo => (
-          <div
-            key={todo.id}
-            onClick={() => dispatch({ type: 'TOGGLE_TODO', payload: todo })}>
+          <div>
             <p>Todo: {todo.item}</p>
-            <p>Completed: {todo.completed ? 'TRUE' : 'FALSE'}</p>
+            <p
+             key={todo.id}
+             onClick={() => dispatch({ type: 'TOGGLE_TODO', payload: todo })}>
+             Status: {todo.completed ? 'Completed' : 'Incomplete'}
+            </p>
           </div>
-        ))}
-        <form onSubmit={handleSubmit}>
+         ))}
+         <form onSubmit={handleSubmit}>
           <input
             type='text'
             name='todo'
@@ -40,11 +42,12 @@ const Todo = () => {
             placeholder='Add a todo!'
           />
           <button type='submit'>Submit</button>
-        </form>
+         </form>
          <button onClick={() => dispatch({ type: 'REMOVE_TODO' })}>
           Delete Todo
-        </button>
-      </div>
+         </button>
+         </legend>
+        </div>
     );
   };
   
